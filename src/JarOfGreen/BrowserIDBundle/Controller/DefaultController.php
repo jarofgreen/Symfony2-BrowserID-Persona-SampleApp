@@ -6,8 +6,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    public function indexAction($name)
+	
+    public function loginAction()
     {
-        return $this->render('JarOfGreenBrowserIDBundle:Default:index.html.twig', array('name' => $name));
+        return $this->render('JarOfGreenBrowserIDBundle:Default:login.html.twig', array());
     }
+
+	public function logoutAction()
+    {
+        return $this->render('JarOfGreenBrowserIDBundle:Default:logout.html.twig', array());
+    }
+
+	
 }
