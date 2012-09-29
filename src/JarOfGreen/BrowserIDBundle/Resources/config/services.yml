@@ -1,0 +1,7 @@
+parameters:
+#    jar_of_green_browser_id.example.class: JarOfGreen\BrowserIDBundle\Example
+
+services:
+#    jar_of_green_browser_id.example:
+#        class: %jar_of_green_browser_id.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
