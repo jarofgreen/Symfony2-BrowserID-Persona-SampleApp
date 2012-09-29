@@ -4,6 +4,8 @@ namespace JarOfGreen\BrowserIDBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use JarOfGreen\SampleAppBundle\Entity\User;
+
 
 class DefaultController extends Controller
 {
@@ -27,7 +29,25 @@ class DefaultController extends Controller
 			
 			$json = json_decode($json);
 			if (is_object($json) && isset($json->status) && $json->status == "okay") {
-				print "EX";
+				
+				$em = $this->getDoctrine()->getEntityManager();
+
+				$dql = "SELECT u FROM JarOfGreenSampleAppBundle:User u  WHERE u.email = :email";
+				$query = $em->createQuery($dql)
+						->setParameter('email', $json->email);
+				$users = $query->getResult();
+				
+				if (count($users) == 1) {
+					$user = $users[0];
+					print "EXISTING USER ".$user->getId();
+				} else {
+					$user = new User();
+					$user->setEmail($json->email);
+					$em->persist($user);
+					$em->flush();
+					print "EXISTING USER ".$user->getId();
+				}
+				
 				die();
 			}
 			

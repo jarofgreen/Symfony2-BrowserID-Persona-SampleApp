@@ -11,6 +11,11 @@ class User {
      * @ORM\Column(type="string")
      */	
 	protected $email;
+
+	public function __construct()
+    {
+    }
+	
 	
     /**
      * Set email
