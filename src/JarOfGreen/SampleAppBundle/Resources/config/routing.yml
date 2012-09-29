@@ -1,0 +1,3 @@
+jar_of_green_sample_app_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: JarOfGreenSampleAppBundle:Default:index }

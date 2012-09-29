@@ -1,3 +1,7 @@
+jar_of_green_sample_app:
+    resource: "@JarOfGreenSampleAppBundle/Resources/config/routing.yml"
+    prefix:   /
+
 jar_of_green_browser_id:
     resource: "@JarOfGreenBrowserIDBundle/Resources/config/routing.yml"
     prefix:   /

@@ -1,0 +1,7 @@
+parameters:
+#    jar_of_green_sample_app.example.class: JarOfGreen\SampleAppBundle\Example
+
+services:
+#    jar_of_green_sample_app.example:
+#        class: %jar_of_green_sample_app.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
